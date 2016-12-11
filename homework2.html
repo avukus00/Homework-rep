@@ -19,17 +19,19 @@
 	<input type="number" ng-model="br1">
 	<input type="number" ng-model="br2">
 	
+	<button ng-click="br1 = '' ; br2 = '' "> Click 4 a clean slate. </button>
+
 	
 
 	
-	<p> {{br1 + br2}} </p>
+	{{br1 + br2}}
 
 
 	<div ng-show="(b1 + br2 < 100)">
 		<img src="pic.jpg">
 	</div>
 
-	<button ng-click="br1 = '' ; br2 = '' "> Click 4 a clean slate. </button>
+	
 
 </body>
 
