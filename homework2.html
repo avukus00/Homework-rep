@@ -1,0 +1,36 @@
+<html>
+
+<head>
+	<title class = "red"> homowork_2 </title>
+
+	<link href="modnimacak.css" rel="stylesheet" type="text/css">
+
+	<script src="angular.js"></script>
+	<script src="skriptica.js"></script>
+</head>
+
+
+
+<body ng-app="ap1" ng-controller="mController">
+
+	<h1 class = "red"> Homework 2.0 <h1>
+
+
+	<input type="number" ng-model="br1">
+	<input type="number" ng-model="br2">
+	
+	
+
+	
+	<p> {{br1 + br2}} </p>
+
+
+	<div ng-show="(b1 + br2 < 100)">
+		<img src="pic.jpg">
+	</div>
+
+	<button ng-click="br1 = '' ; br2 = '' "> Click 4 a clean slate. </button>
+
+</body>
+
+</html>
