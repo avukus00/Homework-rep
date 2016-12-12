@@ -1,12 +1,14 @@
-var appModule = angular.module("ap1", []);
+var appModule = angular.module("app1", ["ngRoute"]);
 
-appModule.controller("mController", function ($scope) {
+appModule.config(function ($routeProvider, $locationProvider) {
 
-
-
-	$scope.br1 = "";
-	$scope.br2 = "";
-
-	
-	
-});
+	$routeProvider.when("/home", {
+		templateUrl: "homework2.html",
+		controller: "homework2Controller"
+	}).when("/about", {
+		templateUrl: "profile.html",
+		controller: "profileController"
+	}).otherwise({
+        redirectTo: '/homework2'
+    });
+})
