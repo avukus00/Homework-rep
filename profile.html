@@ -1,0 +1,100 @@
+<html>
+<head>
+	<title> Profile </title>
+</head>
+
+
+<body ng-controller="profileController">
+<h1>inventar.js</h1>
+<div class="bottom">	
+	<div class="col" >	
+		<div class="print1">
+		Ime:			<input type="text" ng-model="profile.ime"><span style="display:inline-block; width: 60px;"></span> <br><br>
+		Prezime:		<input type="text" ng-model="profile.prezime"><span style="display:inline-block; width: 60px;"></span> <br><br>
+		Dob:			<input type="number" ng-model="profile.dob"><span style="display:inline-block; width: 60px;"></span> <br><br>
+		Inventar:		<input type="text" ng-model="inventarInp"><span style="display:inline-block; width: 6px;"></span>
+		<button ng-click="addToArray()"> Dodaj</button> <br>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="print2">	
+				Vase ime je {{profile.ime}} {{profile.prezime}} i imate 
+				{{profile.dob}} godina.<br><br><br>	
+				Ovo su stvari u vasem inventaru :
+				<ul>				
+					<li ng-repeat="item in profile.items">
+						{{item}}
+					</li>
+				</ul>
+		</div>	
+	</div>
+</div>
+</body>
+
+<style>
+h1 {
+    text-align: center;
+	color: #1d3030;
+	font-style: italic;
+	font-size: 300%;
+    font-family: "Courier New", Courier, monospace;
+}
+body{
+    background-color:#eff5f5;  
+}
+input {
+    
+    border: 2px solid #2f4f4f;
+    border-radius: 1px;
+    height: 25px;
+}
+button{
+    border: 2px solid #2f4f4f;
+    border-radius: 5px;
+    height: 30px;
+}
+div.bottom {
+    height: 200px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: none;
+    margin-bottom: none;
+    border-top: 6px solid #2f4f4f;
+}
+div.col {
+    float: left;
+    width: 40%;
+    margin-top: 40px;
+    margin-bottom: : 3%;
+    padding: 5%;
+    border-radius: 8px;
+}
+.print1{
+    padding-left: : 8%;
+    padding-right: 8%;
+    padding-top: 10%;
+    text-align: right;
+    margin-left: 50%;
+    width: 350px;
+    height: 350px;
+    border: 4px solid #2f4f4f;
+    border-radius: 8px;
+    background-color:#dfecec;
+    font-family: Georgia, serif;  
+    font-weight: bold;
+    color: #1d3030;    
+}
+.print2 {
+    padding: 5%;
+    width: 250px;
+    height: 350px;
+    border: 4px solid #2f4f4f;
+    border-radius: 8px;
+    background-color:#dfecec;
+    font-family: Georgia, serif;
+    color: #1d3030;    
+}
+</style>
+</html>
