@@ -4,30 +4,42 @@
 </head>
 
 <body ng-controller="profileController">
-<h1>inventar.js</h1>
-<div class="bottom">	
-	<div class="col" >	
-		<div class="print1">
-		Ime:			<input type="text" ng-model="profile.ime"><span style="display:inline-block; width: 60px;"></span> <br><br>
-		Prezime:		<input type="text" ng-model="profile.prezime"><span style="display:inline-block; width: 60px;"></span> <br><br>
-		Dob:			<input type="number" ng-model="profile.dob"><span style="display:inline-block; width: 60px;"></span> <br><br>
-		Inventar:		<input type="text" ng-model="inventarInp"><span style="display:inline-block; width: 6px;"></span>
-		<button ng-click="addToArray()"> Dodaj</button> <br>
+	<h1>inventar.js</h1>
+	<div class="bottom">	
+		<div class="col" >	
+			<div class="print1">
+			Ime:			<input type="text" ng-model="profile.ime"><span style="display:inline-block; width: 60px;"></span> <br><br>
+			Prezime:		<input type="text" ng-model="profile.prezime"><span style="display:inline-block; width: 60px;"></span> <br><br>
+			Dob:			<input type="number" ng-model="profile.dob"><span style="display:inline-block; width: 60px;"></span> <br><br>
+			Naziv:			<input type="text" ng-model="imeInp"><span style="display:inline-block; width: 60px;"></span>	<br> <br ng-show="imeInp.length">
+							<div class="upoz" ng-show="!imeInp.length">(Naziv ne smije biti prazan)</div><span style="display:inline-block; width: 60px;"></span><br>
+			Serijski broj:	<input type="number" ng-model="brojInp"><span style="display:inline-block; width: 60px;"></span> <br><br ng-show="!condition1()">
+							<div class="upoz" ng-show="condition1()">(Broj mora biti izmedu 1 i 10000)</div><span style="display:inline-block; width: 60px;"></span><br>
+			Vrijednost: 	<input type="number" ng-model="vrijednostInp"><span style="display:inline-block; width: 60px;"></span> <br><br>
+			Opis: 			<textarea  ng-model="opisInp"> </textarea> <span style="display:inline-block; width: 60px;"></span> <br><br>
+			Dostupnost:		<input type="checkbox" ng-model="dostuponstInp"> 
+			<button ng-disabled="condition()" ng-click="addToArray()">Dodaj</button> <br>
+			</div>
 		</div>
-	</div>
 
-	<div class="col">
-		<div class="print2">	
-				Vase ime je {{profile.ime}} {{profile.prezime}} i imate 
-				{{profile.dob}} godina.<br><br><br>	
-				Ovo su stvari u vasem inventaru :
-				<ul>				
-					<li ng-repeat="item in profile.items track by $index">
-						{{item}}
-					</li>
-				</ul>
+		<div class="col">
+			<div class="print2">	
+					<p ng-show="profile.ime!='' && profile.prezime!='' && profile.dob!=''">
+						Vase ime je {{profile.ime}} {{profile.prezime}} i imate 
+						{{profile.dob}} godina.<br><br><br>	
+					</p>
+						Ovo su stvari u vasem inventaru :
+					<ul>				
+						<li ng-repeat="item in profile.items track by $index">
+							{{item.ime}}<br>
+							{{item.broj}}<br>
+							{{item.value}}<br>
+							{{item.opis}}<br>
+							{{item.dost}}
+						</li>
+					</ul>
+			</div>
 		</div>
 	</div>
-</div>
 </body>
 </html>
