@@ -1,0 +1,16 @@
+<div class="print2">	
+					<p ng-show="profile.ime!='' && profile.prezime!='' && profile.dob!=''">
+						Vase ime je {{profile.ime}} {{profile.prezime}} i imate 
+						{{profile.dob}} godina.<br><br><br>	
+					</p>
+						Ovo su stvari u vasem inventaru :
+					<ul>				
+						<li ng-repeat="item in profile.items track by $index">
+							{{item.ime}}<br>
+							{{item.broj}}<br>
+							{{item.value}}<br>
+							{{item.opis}}<br>
+							{{item.dost}}
+						</li>
+					</ul>
+</div>
