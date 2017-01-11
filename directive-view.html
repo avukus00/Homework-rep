@@ -1,16 +1,30 @@
 <div class="print2">	
-					<p ng-show="profile.ime!='' && profile.prezime!='' && profile.dob!=''">
-						Vase ime je {{profile.ime}} {{profile.prezime}} i imate 
-						{{profile.dob}} godina.<br><br><br>	
-					</p>
-						Ovo su stvari u vasem inventaru :
-					<ul>				
-						<li ng-repeat="item in profile.items track by $index">
-							{{item.ime}}<br>
-							{{item.broj}}<br>
-							{{item.value}}<br>
-							{{item.opis}}<br>
-							{{item.dost}}
-						</li>
-					</ul>
+	<p ng-show="profile.ime!='' && profile.prezime!='' && profile.dob!=''">
+		Vase ime je {{profile.ime}} {{profile.prezime}} i imate 
+		{{profile.dob}} godina.<br><br><br>	
+	</p>
+		Ovo su stvari u vasem inventaru :
+				
+	<div ng-repeat="item in profile.items track by $index">
+		<div class="asd">
+			<div class="kol1">
+				<div class="ime">{{item.ime}}<br></div>
+				<div class="opis">{{item.opis}}<br></div>
+			</div>
+
+			<div class="kol2">
+				<div class="vrjednost">{{item.value}}  kn<br></div>
+				<div class="broj">Serijski broj: &nbsp {{item.broj}}<br></div>
+			</div>
+
+			<div class="kol3">
+				<div ng-show="item.dost">
+					<img src="y.png" height="40" width="60">
+				</div>
+				<div ng-show="!item.dost">
+					<img src="x.png" height="40" width="60">
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
