@@ -8,6 +8,9 @@ appModule.config(function ($routeProvider, $locationProvider) {
 	}).when("/profile", {
 		templateUrl: "profile.html",
 		controller: "profileController"
+	}).when("/UserGenerator", {
+		templateUrl: "userGenerator.html",
+		controller: "userGeneratorController"
 	}).otherwise({
         redirectTo: '/homework2'
     });

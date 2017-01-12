@@ -1,0 +1,71 @@
+<html>
+<head>
+	<title> USER GENERATOR </title>
+</head>
+
+<body ng-controller="userGeneratorController">
+<h1>USER GENERATOR</h1>
+
+	<div class="user0">
+		<div class="user1">
+			<div class="user11">
+				Odaberi spol: <br>
+				<select ng-model="gender">
+					<option value="0">Random</option>
+					<option value="male">Muski</option>
+					<option value="female">Zenski</option>
+				</select>
+				<br><br>
+				Odaberi nacionalnost: <br>
+
+				<select ng-model="nationality">
+					<option value="0">Random</option>
+					<option value="AU">AU</option>
+					<option value="BR">BR</option>
+					<option value="CA">CA</option>
+					<option value="CH">CH</option>
+					<option value="DE">DE</option>
+					<option value="DK">DK</option>
+					<option value="ES">ES</option>
+					<option value="FI">FI</option>
+					<option value="FR">FR</option>
+					<option value="GB">GB</option>
+					<option value="IE">IE</option>
+					<option value="IR">IR</option>
+					<option value="NL">NL</option>
+					<option value="NZ">NZ</option>
+					<option value="TR">TR</option>
+					<option value="US">US</option>
+				</select>
+
+				<br><br><br><br>
+
+				<button ng-click="fetchUserData()" style="width: 200px;height: 70;">refresh</button>
+			</div>
+		</div>
+
+
+
+		<div class="user1">
+			<div class="user12">
+				<div class="slika">
+					<img src={{user.results[0].picture.large}}> 
+				</div>
+				<br>
+				<div class="userime">
+					{{user.results[0].name.title}} &nbsp {{user.results[0].name.first}} &nbsp {{user.results[0].name.last}} &nbsp <br><br><br>
+				</div>
+				<div class="stats">	
+					Nationality: &nbsp {{user.results[0].nat}} <br>
+					City: &nbsp {{user.results[0].location.city}} <br>
+					Adress: &nbsp {{user.results[0].location.street}} <br>
+					Phone: &nbsp {{user.results[0].phone}} <br>
+					Cell: &nbsp {{user.results[0].cell}} <br>
+					Registered since: &nbsp {{user.results[0].registered}} <br>
+				</div>
+				
+			</div>	
+		</div>
+	</div>
+</body>
+</html>
